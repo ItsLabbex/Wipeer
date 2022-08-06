@@ -7,7 +7,7 @@ import (
 	"Wipeer/src/cmd/vars"
 )
 
-func SelectEmulatorMode() {
+func RunEmulatorReset() {
 	utils.ClearConsole()
 	sections.Header()
 

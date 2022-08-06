@@ -20,6 +20,8 @@ func StartApp() {
 		vars.SetDBname("labbex")
 	}
 
-	emulators.SelectEmulatorMode()
+	emulators.RunEmulatorReset()
+
+	sections.Finish()
 
 }
