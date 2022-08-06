@@ -1,21 +1,25 @@
 package cmd
 
 import (
-	"Wipe/src/cmd/emulators"
-	"Wipe/src/cmd/events"
-	"Wipe/src/cmd/sections"
+	"Wipeer/src/cmd/emulators"
+	"Wipeer/src/cmd/sections"
+	"Wipeer/src/cmd/vars"
 )
 
 func StartApp() {
-	events.SetupCloseHandler()
 
 	sections.SetEmulator()
-	sections.GetDatabase()
 
-	sections.SecureAction()
+	if !vars.Debug {
+		sections.GetDatabase()
+		sections.SecureAction()
+	} else {
+		vars.SetHost("localhost")
+		vars.SetUser("root")
+		vars.SetPassword("")
+		vars.SetDBname("labbex")
+	}
 
 	emulators.SelectEmulatorMode()
-
-	sections.Finish()
 
 }

@@ -1,7 +1,8 @@
 package sections
 
 import (
-	"Wipe/src/cmd/utils"
+	"Wipeer/src/cmd/utils"
+	"os"
 )
 
 func SecureAction() {
@@ -9,6 +10,6 @@ func SecureAction() {
 	Header()
 	result := utils.SetInput("DB", "Estas seguro de realizar esta acción (y/n)")
 	if result != "y" && result != "Y" {
-		utils.AbortApp()
+		os.Exit(0)
 	}
 }

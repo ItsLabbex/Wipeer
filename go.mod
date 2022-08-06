@@ -1,4 +1,4 @@
-module Wipe
+module Wipeer
 
 go 1.18
 

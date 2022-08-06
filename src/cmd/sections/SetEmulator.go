@@ -1,8 +1,8 @@
 package sections
 
 import (
-	"Wipe/src/cmd/utils"
-	"Wipe/src/cmd/vars"
+	"Wipeer/src/cmd/utils"
+	"Wipeer/src/cmd/vars"
 	"github.com/gookit/color"
 )
 

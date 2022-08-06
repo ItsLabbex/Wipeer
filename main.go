@@ -1,7 +1,7 @@
 package main
 
 import (
-	"Wipe/src/cmd"
+	"Wipeer/src/cmd"
 )
 
 func main() {

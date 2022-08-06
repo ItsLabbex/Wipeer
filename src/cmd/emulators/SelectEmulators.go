@@ -1,19 +1,20 @@
 package emulators
 
 import (
-	"Wipe/src/cmd/sections"
-	"Wipe/src/cmd/utils"
-	"Wipe/src/cmd/vars"
+	"Wipeer/src/cmd/emulators/Arcturus"
+	"Wipeer/src/cmd/sections"
+	"Wipeer/src/cmd/utils"
+	"Wipeer/src/cmd/vars"
 )
 
 func SelectEmulatorMode() {
 	utils.ClearConsole()
 	sections.Header()
 
-	var EmulatorID string = vars.Emulator
+	var EmulatorID = vars.Emulator
 
 	if EmulatorID == "1" {
-		println("Arcturus")
+		Arcturus.Start()
 		return
 	}
 }

@@ -1,6 +1,7 @@
 package db
 
 import (
+	"Wipeer/src/cmd/utils"
 	"fmt"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
@@ -28,6 +29,7 @@ func (i *DBInit) ConnectionDB() {
 
 	// Comprobamos que la conexion con la base de datos es correcta
 	if err != nil {
-		panic(err)
+		utils.SendLog("error", "Ha ocurrido un error en la conexión en la base de datos")
+		utils.SendLog("error", err.Error())
 	}
 }
