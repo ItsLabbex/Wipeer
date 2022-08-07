@@ -1,8 +1,8 @@
-package users
+package core
 
 import "Wipeer/src/cmd/emulators/Arcturus/functions"
 
-func Reset() {
+func ResetUsers() {
 	functions.ClearTable("users", "id")
 	functions.ClearTable("users_achievements", "user_id")
 	functions.ClearTable("users_achievements_queue", "user_id")

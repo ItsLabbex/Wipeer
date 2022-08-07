@@ -1,7 +1,7 @@
-package items
+package core
 
 import "Wipeer/src/cmd/emulators/Arcturus/functions"
 
-func Reset() {
+func ResetItems() {
 	functions.ClearTable("items", "user_id")
 }

@@ -1,9 +1,7 @@
 package Arcturus
 
 import (
-	"Wipeer/src/cmd/emulators/Arcturus/items"
-	"Wipeer/src/cmd/emulators/Arcturus/rooms"
-	"Wipeer/src/cmd/emulators/Arcturus/users"
+	"Wipeer/src/cmd/emulators/Arcturus/core"
 	"Wipeer/src/cmd/utils"
 	"Wipeer/src/cmd/vars"
 	"Wipeer/src/db"
@@ -33,9 +31,25 @@ func Start() {
 	err := Conn.ConnectionDB()
 
 	if err == nil {
-		users.Reset()
-		items.Reset()
-		rooms.Reset()
+		core.ResetUsers()
+		core.ResetItems()
+		core.ResetRooms()
+		core.ResetMessages()
+		core.ResetBans()
+		core.ResetBots()
+		core.ResetCalendar()
+		core.ResetCameraWeb()
+		core.ResetChatlog()
+		core.ResetCommandLogs()
+		core.ResetEmulator()
+		core.ResetGuilds()
+		core.ResetLogs()
+		core.ResetMarketplaceItems()
+		core.ResetNamechangeLog()
+		core.ResetOldGuilds()
+		core.ResetPolls()
+		core.ResetSupport()
+		core.ResetVouchers()
 	}
 
 }

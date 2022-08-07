@@ -1,8 +1,8 @@
-package rooms
+package core
 
 import "Wipeer/src/cmd/emulators/Arcturus/functions"
 
-func Reset() {
+func ResetRooms() {
 	functions.ClearTable("rooms", "owner_id")
 	functions.WipeTable("room_bans")
 	functions.WipeTable("room_enter_log")
