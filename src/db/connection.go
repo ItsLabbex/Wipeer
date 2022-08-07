@@ -17,7 +17,7 @@ type DBInit struct {
 	DBname   string
 }
 
-func (i *DBInit) ConnectionDB() {
+func (i *DBInit) ConnectionDB() error {
 	// String de la base de datos
 	dsn := fmt.Sprintf("%s:%s@tcp(%s)/%s?charset=utf8mb4&parseTime=True&loc=Local", i.User, i.Password, i.Host, i.DBname)
 
@@ -31,5 +31,8 @@ func (i *DBInit) ConnectionDB() {
 	if err != nil {
 		utils.SendLog("error", "Ha ocurrido un error en la conexión en la base de datos")
 		utils.SendLog("error", err.Error())
+		return err
 	}
+
+	return err
 }

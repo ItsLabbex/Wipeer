@@ -1,13 +1,14 @@
 package Arcturus
 
 import (
+	"Wipeer/src/cmd/emulators/Arcturus/items"
+	"Wipeer/src/cmd/emulators/Arcturus/rooms"
+	"Wipeer/src/cmd/emulators/Arcturus/users"
 	"Wipeer/src/cmd/utils"
 	"Wipeer/src/cmd/vars"
 	"Wipeer/src/db"
 	"github.com/gookit/color"
 )
-
-var idUserSystem int = 1
 
 func Start() {
 	utils.ClearConsole()
@@ -29,8 +30,12 @@ func Start() {
 		DBname:   vars.DBname,
 	}
 
-	Conn.ConnectionDB()
+	err := Conn.ConnectionDB()
 
-	resetUsers()
+	if err == nil {
+		users.Reset()
+		items.Reset()
+		rooms.Reset()
+	}
 
 }
